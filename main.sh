@@ -4,7 +4,8 @@
 #检查docker程序是否存在不存在就安装
 if [ ! -d "/usr/bin/docker" ]; then
     read -p "Press enter to install docker" bcaucbau 
-    yum -y install docker
+    curl -fsSL https://get.docker.com -o get-docker.sh 
+    sh get-docker.sh
     systemctl start docker
     systemctl enable docker
 fi
